@@ -1,0 +1,23 @@
+body {
+  font-family: $heading-font;
+  color: $font-color;
+  background: $background-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font;
+}
+
+p, ul, a, li, span{
+  font-family: $second-font;
+}
+
+.font-blog {
+  font-family: $blog-font;
+}
+
+//WP CUSTOM
+
+.menu-item {
+  display: inline-block;
+}

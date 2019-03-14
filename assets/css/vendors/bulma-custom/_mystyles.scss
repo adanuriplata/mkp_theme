@@ -1,0 +1,42 @@
+@charset "utf-8";
+@import "../../node_modules/bulma/bulma.sass";
+
+
+//MKP agrega el tamaño de 80*80 para tipos de imagenes en bulma
+$dimensions: (16, 24, 32, 48, 64, 80, 96, 128);
+
+ @each $dimension in $dimensions {
+   &.is-#{$dimension}x#{$dimension} {
+     height: $dimension * 1px;
+      width: $dimension * 1px;
+   }    
+ }
+
+.is-size-8{
+  font-size: 0.65rem;
+}
+
+.is-size-9{
+  font-size: 0.55rem;
+} 
+
+//MKP quita sombra de card para posts
+ .card {
+   box-shadow: none;
+ }
+// MKP 
+ .is-horizontal-center {
+ 	justify-content: center;
+ }
+
+ .is-space-between {
+   justify-content: space-between;
+ }
+
+ .is-align-items-center {
+   align-items: center;
+ }
+
+ .is-flex-wrap {
+   flex-wrap: wrap;
+ }

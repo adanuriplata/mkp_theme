@@ -1,0 +1,20 @@
+.single-post__hero > div {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.single-post__content__theContent {
+  margin-top: 30px;
+  color: $color-blog;
+  p {
+    font-size: $p-blog;
+    font-family: $blog-font;
+    margin: 10px 0;
+  }
+  h2{
+    font-size: $h2-blog;
+  }
+  h3 {
+    font-size: $h3-blog;
+  }
+}

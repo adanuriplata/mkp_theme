@@ -1,0 +1,23 @@
+.container__main-post {
+  &__text{
+      padding-top: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      div {
+        padding: 5px 10px;
+      }
+  }
+}
+
+.container__categories{
+  padding: 10px 0;
+  ul li {
+    padding-right: 20px;
+    padding-bottom: 10px;
+  }
+}
+
+.container__suscribe-main h3{
+  color: #9CBFE0;
+}
