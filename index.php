@@ -14,13 +14,17 @@ if ( ! defined( 'ABSPATH' ) ) {
         <?php if(have_posts()) : the_post(); ?>
         <div class="container__main-post">
           <figure class="image">
-          <?php the_post_thumbnail('small-thumbnail-2') ?>
-            <!-- <img src="<?php $url = home_url()."/wp-content/themes/merkapalia/assets/img/raw/post-image-539_323.jpg" ; echo esc_url( $url ); ?>" alt="imagen" width="539"> -->
+            <?php the_post_thumbnail('small-thumbnail-2') ?>
           </figure>
           <div class="container__main-post__text">
-            <div class="categoria is-size-7">#categoria</div>
-            <div class="fecha is-size-7"><span class="icon"><i class="fas fa-calendar-day"></i></span><?php the_date() ?></div>
+            <div class="categoria is-size-7">
+              <span class="icon"><i class="fas fa-tag"></i></span><span><?php the_category('single'); ?></span>
+            </div>
+            <div class="fecha is-size-7">
+              <span class="icon"><i class="fas fa-calendar-day"></i></span> <?php the_date() ?>
+            </div>
             <div class="titulo"><a href=<?php the_permalink(); ?>><?php the_title(); ?></a></div>
+            <div class="subtitle"><?php the_excerpt(); ?></div>
           </div>
         </div>
         <?php endif ?>
@@ -39,7 +43,15 @@ if ( ! defined( 'ABSPATH' ) ) {
                 </figure>
               </div>
             <div class="column is-flex">
-              <div class="titulo"><a href=<?php the_permalink(); ?>><?php the_title(); ?></a></div>
+              <div>
+                <h2 class="titulo"><a href=<?php the_permalink(); ?>><?php the_title(); ?></a></h2>
+                <div class="subtitle"><?php the_excerpt(); ?>
+                  <div class="is-size-7 categoria is-primary-color">
+                    <span class="icon is-primary-color"><i class="fas fa-tag"></i></span><span><?php the_category('single'); ?></span>
+                  <span class="icon is-primary-color"><i class="fas fa-calendar-day"></i></span> <span class="is-primary-color"><?php echo get_the_date(); ?></span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <?php endwhile; ?>
@@ -47,7 +59,6 @@ if ( ! defined( 'ABSPATH' ) ) {
           <?php else : ?>
 	            <p><?php esc_html_e( 'Sin noticias que mostrar' ); ?></p>
           <?php endif; ?>
-          <hr>
         </div>
 
           <?php
@@ -66,7 +77,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div>
 
 <!-- SUSCRIBE -->
-<div class="section">
+<div class="section is-bg-white">
   <div class="container">
 
     <nav class="level">
@@ -95,22 +106,35 @@ if ( ! defined( 'ABSPATH' ) ) {
   <div class="container">
     <div class="container__post-grid columns is-multiline is-8 is-variable">
 
+      <?php
+        $query = new WP_Query( array( 'posts_per_page' => 3, 'offset' => 4 ) );
+      ?>
+      <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+
       <div class="column is-one-third">
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by3">
-              <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+              <?php the_post_thumbnail('grid-thumbnail') ?>
             </figure>
           </div>
           <div class="card-content">
             <div class="media-content">
-              <p class="subtitle is-6">#categoria </p>
-              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-              <p class="title is-6">Chrome Extension Protects Againts JavaScript</p>
+              <p class="subtitle is-7">
+                <span class="icon"><i class="fas fa-tag"></i></span><span><?php the_category('single'); ?></span>
+              </p>
+              <time datetime="2016-1-1"><span class="icon is-primary-color"><i class="fas fa-calendar-day"></i></span> <span class="is-primary-color"><?php echo get_the_date(); ?></span></time>
+              <p class="title is-6"><a href=<?php the_permalink(); ?>><?php the_title(); ?></a></p>
             </div>
           </div>
         </div>
       </div>
+
+      <?php endwhile; ?>
+          <?php wp_reset_postdata(); ?>
+          <?php else : ?>
+	            <p><?php esc_html_e( 'Sin noticias que mostrar' ); ?></p>
+          <?php endif; ?>
 
       <div class="column is-one-third">
         <div class="card">

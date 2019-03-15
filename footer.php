@@ -48,7 +48,7 @@ wp_footer(); ?>
 				</div>
 				<div class="column is-flex is-align-center is-flex-wrap has-text-right">
 					<div class="">
-						Merkapalia GM Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non fuga unde est voluptate 
+						Merkapalia GM Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non fuga unde est voluptate
 					</div>
 					<div class="">
 						<ul class="is-size-7">
@@ -83,6 +83,6 @@ wp_footer(); ?>
 			</div>
 		</div>
 	</div>
-
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
 </body>
 </html>

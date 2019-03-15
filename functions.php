@@ -37,12 +37,21 @@ function mkp_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'mkp_style_script' );
 
-//MKP The excerpt limit
+//MKP The excerpt limit and custom finally parrafo
 
 function wpdocs_custom_excerpt_length( $length ) {
-    return 20;
+    return 15;
 }
+
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+	///text finally
+function mkp_excerpt_custom_finally($more) {
+return '...';
+}
+
+add_filter('excerpt_more', 'mkp_excerpt_custom_finally');
+
 
 // mkp the add images
 
@@ -54,6 +63,7 @@ function mkp_setup(){
   add_image_size( 'small-thumbnail-1', 400, 300, true );
 	add_image_size( 'square-thumbnail', 80, 80, true );
 	add_image_size( 'banner-image', 1024, 1024, true );
+	add_image_size( 'grid-thumbnail', 1280, 960, true );
 }
 add_action( 'after_setup_theme' ,'mkp_setup');
 

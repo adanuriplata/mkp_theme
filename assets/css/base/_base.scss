@@ -12,8 +12,20 @@ p, ul, a, li, span{
   font-family: $second-font;
 }
 
+a {
+  color:$font-color;
+}
+
+.is-primary-color {
+  color: $font-color;
+}
+
 .font-blog {
   font-family: $blog-font;
+}
+
+.is-bg-white {
+  background: white;
 }
 
 //WP CUSTOM
