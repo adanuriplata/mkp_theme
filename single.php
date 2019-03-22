@@ -8,8 +8,8 @@
     <div class="section single-post__hero">
       <div class="container">
         <div class="">
-          <h1 class="is-size-1"><?php the_title(); ?></h1>
-          <div class="subtitle is-size-4"><?php the_excerpt(); ?></div>
+          <h1 class="is-size-3 is-size-1-desktop"><?php the_title(); ?></h1>
+          <div class="is-size-5 subtitle is-size-4-desktop"><?php the_excerpt(); ?></div>
         </div>
         <div class="card-content">
           <div class="media is-align-items-center">
@@ -23,7 +23,7 @@
             <p class="subtitle is-7"><?php the_date(); ?></p>
           </div>
         </div>
-      </div>
+      </div>k
     </div>
     <div class="single-post__content">
       <div class="single-post__content__thumbnail is-flex is-horizontal-center">

@@ -46,9 +46,9 @@ if ( ! defined( 'ABSPATH' ) ) {
               <div>
                 <h2 class="titulo"><a href=<?php the_permalink(); ?>><?php the_title(); ?></a></h2>
                 <div class="subtitle"><?php the_excerpt(); ?>
-                  <div class="is-size-7 categoria is-primary-color">
-                    <span class="icon is-primary-color"><i class="fas fa-tag"></i></span><span><?php the_category('single'); ?></span>
-                  <span class="icon is-primary-color"><i class="fas fa-calendar-day"></i></span> <span class="is-primary-color"><?php echo get_the_date(); ?></span>
+                  <div class="is-size-7 is-primary-color categoria-fecha is-flex">
+                    <div class="categoria"><span class="icon is-primary-color"><i class="fas fa-tag"></i></span><span><?php the_category('single'); ?></span></div>
+                    <div class="fecha"><span class="icon is-primary-color"><i class="fas fa-calendar-day"></i></span> <span class="is-primary-color"><?php echo get_the_date(); ?></span></div>
                   </div>
                 </div>
               </div>
@@ -104,14 +104,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- GRID -->
 <div class="section">
   <div class="container">
-    <div class="container__post-grid columns is-multiline is-8 is-variable">
+    <div class="container__post-grid columns is-multiline is-3 is-variable">
+
+      <div class="column is-one-quarter ad">
+        <div class="ad_3x250">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+            </figure>
+          </div>
+        </div>
+      </div>
 
       <?php
-        $query = new WP_Query( array( 'posts_per_page' => 3, 'offset' => 4 ) );
+        $query = new WP_Query( array( 'posts_per_page' => 3, 'offset' => 3 ) );
       ?>
       <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
-      <div class="column is-one-third">
+      <div class="column is-one-quarter">
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by3">
@@ -122,9 +132,14 @@ if ( ! defined( 'ABSPATH' ) ) {
             <div class="media-content">
               <p class="subtitle is-7">
                 <span class="icon"><i class="fas fa-tag"></i></span><span><?php the_category('single'); ?></span>
+                <span class="icon is-primary-color is-7">
+                  <i class="fas fa-calendar-day"></i>
+                </span>
+                <span class="is-primary-color is-7">
+                  <?php echo get_the_date(); ?>
+                </span>
               </p>
-              <time datetime="2016-1-1"><span class="icon is-primary-color"><i class="fas fa-calendar-day"></i></span> <span class="is-primary-color"><?php echo get_the_date(); ?></span></time>
-              <p class="title is-6"><a href=<?php the_permalink(); ?>><?php the_title(); ?></a></p>
+              <h3 class="title is-5 has-text-weight-normal"><a href=<?php the_permalink(); ?>><?php the_title(); ?></a></h3>
             </div>
           </div>
         </div>
@@ -136,85 +151,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	            <p><?php esc_html_e( 'Sin noticias que mostrar' ); ?></p>
           <?php endif; ?>
 
-      <div class="column is-one-third">
-        <div class="card">
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-            </figure>
-          </div>
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-48x48">
-                  <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-4">John Smith</p>
-                <p class="subtitle is-6">@johnsmith</p>
-              </div>
-            </div>
-
-            <div class="content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-              <a href="#">#css</a> <a href="#">#responsive</a>
-              <br>
-              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="column is-one-third">
-        <div class="card">
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-            </figure>
-          </div>
-          <div class="card-content">
-            <div class="media-content">
-              <p class="subtitle is-7">#categoria</p>
-              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-              <p class="title is-6">Chrome Extension Protects Againts JavaScript</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column is-one-third">
-        <div class="card">
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-            </figure>
-          </div>
-          <div class="card-content">
-            <div class="media-content">
-              <p class="subtitle is-7">#categoria</p>
-              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-              <p class="title is-6">Chrome Extension Protects Againts JavaScript</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column is-one-third">
-        <div class="card">
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-            </figure>
-          </div>
-          <div class="card-content">
-            <div class="media-content">
-              <p class="subtitle is-7">#categoria</p>
-              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-              <p class="title is-6">Chrome Extension Protects Againts JavaScript</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column is-one-third ad">
+      <div class="column is-one-quarter ad">
         <div class="ad_3x250">
           <div class="card-image">
             <figure class="image is-4by3">
@@ -223,54 +160,7 @@ if ( ! defined( 'ABSPATH' ) ) {
           </div>
         </div>
       </div>
-      <div class="column is-one-third">
-        <div class="card">
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-            </figure>
-          </div>
-          <div class="card-content">
-            <div class="media-content">
-              <p class="subtitle is-7">#categoria</p>
-              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-              <p class="title is-6">Chrome Extension Protects Againts JavaScript</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column is-one-third">
-        <div class="card">
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-            </figure>
-          </div>
-          <div class="card-content">
-            <div class="media-content">
-              <p class="subtitle is-7">#categoria</p>
-              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-              <p class="title is-6">Chrome Extension Protects Againts JavaScript</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column is-one-third">
-        <div class="card">
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-            </figure>
-          </div>
-          <div class="card-content">
-            <div class="media-content">
-              <p class="subtitle is-7">#categoria</p>
-              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-              <p class="title is-6">Chrome Extension Protects Againts JavaScript</p>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </div>
   </div>
 </div>

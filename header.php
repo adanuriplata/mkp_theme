@@ -48,11 +48,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 
       <div class="navbar-menu">
         <div class="navbar-end">
+        <?php
+          $args = array(
+            'theme_location' => 'main-menu',
+            'menu_class' => 'navbar-end',
+            'link_class'  => 'navbar-item',
+            'container' => false,
+            'echo' => false,
+            'items_wrap' => '%3$s',
+            'depth' => 0,
+          );
+          echo strip_tags(wp_nav_menu( $args ), '<a>' );
+        ?>
+        </div>
+        <!--
             <a href="#" class="navbar-item">INICIO</a>
             <a href="#" class="navbar-item">BLOG</a>
             <a href="#" class="navbar-item">CONTACTO</a>
             <a href="#" class="navbar-item">BLOG</a>
-        </div>
+         -->
       </div>
     </div>
   </nav>

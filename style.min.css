@@ -1390,6 +1390,7 @@ a{color:#677897}
 .container__post-mini{padding-bottom:30px;border-bottom:solid .5px #cbe3fa}
 .container__post-mini .titulo{font-size:19px}
 .container__post-mini .subtitle{font-size:14.8px;font-weight:300}
+.container__post-mini .categoria-fecha{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .box_newsletter{margin:0 20px}
 .box_newsletter__text{background:#102397;padding:30px 0}
 .box_newsletter__form{padding:30px 40px;background:#FFF}
